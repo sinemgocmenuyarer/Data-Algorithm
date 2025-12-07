@@ -25,8 +25,10 @@ function isPalindrome(s: string): boolean {
 function isPalindrome2(s: string): boolean {
   // O(n) time complexity and O(1) space complexity
   // First and Last and rest should be same
+  // g: global in regex. It means not only first match but all matches replace
+  // i: case insensitive in regex
 
-  s = s.toLowerCase().replace(/[^a-z0-9]/g, "");
+  s = s.toLowerCase().replace(/[^a-z0-9]/gi, "");
 
   for (let i = 0, y = s.length - 1; i < y; i++, y--) {
     if (s.charAt(i) !== s.charAt(y)) {
